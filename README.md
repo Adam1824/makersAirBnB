@@ -18,3 +18,9 @@ user stories:
 To set up database:
 -run rake once.
 ```
+```
+stories completeed:
+
+```
+
+writing syntax: snakecase
