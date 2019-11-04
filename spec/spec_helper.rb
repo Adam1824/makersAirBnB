@@ -1,4 +1,5 @@
 require 'rake'
+require_relative './setup_test_database'
 # Load the Rakefile
 # Rake.application.load_rakefile
 #
@@ -31,7 +32,12 @@ ENV['ENVIRONMENT'] = 'test'
 RSpec.configure do |config|
   config.after(:suite) do
   end
+  config.before(:each) do
+    setup_test_database
+  end
 end
+
+
 # require File.join(File.dirname(__FILE__), '..', './lib/app.rb')
 # require '/Users/Student/projects/challenges/chitter-challenge/lib/app.rb'
 require 'capybara'
