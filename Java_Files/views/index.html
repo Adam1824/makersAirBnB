@@ -34,7 +34,7 @@ $(document).ready(function(){
     $('#info').text("Welcome to MakersBnB!");
   });
   $("#list").click(function() {
-    $.get("../testing.erb", function(data){
+    $.get("../test", function(data){
     $('#info').text(data);
     })
   });
