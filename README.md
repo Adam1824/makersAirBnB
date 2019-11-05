@@ -2,7 +2,7 @@
 ```
 user stories:
 1. As a signed-up user, Users can list multiple spaces.
-2. As a signed-up user, I can list a new space.
+2. As a signed-up user, I can make a listing.
 3. As a signed-up user, Users should be able to name their space.
   As a signed-up user, Users provide a short description of the space.
   As a signed-up user, Users provide a price per night.
