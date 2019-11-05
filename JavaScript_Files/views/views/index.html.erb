@@ -35,7 +35,7 @@ $(document).ready(function(){
   });
   $("#list").click(function() {
     $.get("http://localhost:9292/", function(data){
-    $('#info').text(data);
+    $("#info").load("http://localhost:9292/");
     })
   });
   $("#make").click(function() {

@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'json'
+require_relative '../../lib/AirBnB'
 
 class AirBnB_js < Sinatra::Base
   set :public_folder, proc { File.join(root)}
@@ -13,13 +14,20 @@ class AirBnB_js < Sinatra::Base
     erb :make_listing
   end
 
-  post 'make_listing' do
+  post '/make_listing' do
     space_name = params[:space_name]
     desc = params[:description]
     ppn = params[:ppn]
     dates_ava = params[:dates_available]
-    avaliablity = params[:avaliablity]
+    availability = params[:availability]
     location = params[:location]
+    AirBnB.create(spacename: space_name,
+      description: desc,
+      price_per_night: ppn,
+      dates_available: dates_ava,
+      availability: availability,
+      location: location)
+    redirect "/"
   end
 
   run! if app_file == $0
