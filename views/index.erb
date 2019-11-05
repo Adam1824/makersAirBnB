@@ -19,5 +19,10 @@
     <%= place.location %>
   </li>
   <br>
+  <form action="/" method="post">
+    <input type ='hidden' name='spaceid' value=<%=place.spaceid%>>
+    <input type="submit" value="Book" >
+  </form>
+
   <% end %>
 </ul>

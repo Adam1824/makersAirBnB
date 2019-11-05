@@ -11,4 +11,9 @@ class AirBnB_manager < Sinatra::Base
     erb :index
   end
 
+  post '/' do
+    p  params[:spaceid]
+    AirBnB.update(params[:spaceid].to_i)
+    redirect '/'
+  end
 end

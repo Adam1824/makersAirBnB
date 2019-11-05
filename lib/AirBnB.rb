@@ -34,4 +34,11 @@ class AirBnB
     AirBnB.new(spaceid: result[0]['spaceid'], host_id: result[0]['host_id'], spacename: result[0]['spacename'], description: result[0]['description'], price_per_night: result[0]['price_per_night'], dates_available: result[0]['dates_available'], availability: result[0]['availability'], location: result[0]['location'])
   end
 
+  def self.update(spaceid)
+
+    test_checker()
+
+    result = @connection.exec("UPDATE accommodation SET availability = False WHERE spaceid = '#{spaceid}'")
+
+  end
 end
