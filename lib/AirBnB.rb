@@ -35,5 +35,3 @@ class AirBnB
   end
 
 end
-AirBnB.create(spacename: "2 Bedroom house", description: "What a lovely house", price_per_night: 200, dates_available: "December", availability: "True", location: "Solihull")
-p AirBnB.all
