@@ -30,5 +30,11 @@ class AirBnB_js < Sinatra::Base
     redirect "/"
   end
 
+  post '/' do
+    headers("Access-Control-Allow-Origin" => "*")
+    AirBnB.update(params[:spaceid].to_i)
+    redirect '/'
+  end
+
   run! if app_file == $0
 end
