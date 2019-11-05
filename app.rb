@@ -10,5 +10,4 @@ class AirBnB_manager < Sinatra::Base
     p @accommodation
     erb :index
   end
-
 end
