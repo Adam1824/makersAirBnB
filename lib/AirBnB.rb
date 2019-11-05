@@ -18,7 +18,7 @@ class AirBnB
 
   def self.all
 
-    p test_checker()
+    test_checker()
 
     result = @connection.exec("SELECT * FROM accommodation;")
     result.map do |place|
@@ -35,3 +35,5 @@ class AirBnB
   end
 
 end
+AirBnB.create(spacename: "2 Bedroom house", description: "What a lovely house", price_per_night: 200, dates_available: "December", availability: "True", location: "Solihull")
+p AirBnB.all
