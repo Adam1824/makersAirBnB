@@ -34,14 +34,13 @@ $(document).ready(function(){
     $('#info').text("Welcome to MakersBnB!");
   });
   $("#list").click(function() {
-    $.get("../test", function(data){
-    $('#info').text(data);
+    $.get("http://localhost:9292/", function(data){
+    $("#info").load("http://localhost:9292/");
     })
   });
   $("#make").click(function() {
-    $.get("PLACEHOLDER_MAKING_BOOKING", function(data){
-    $('#info').text(data);
-    })
+    // Access-Control-Allow-Origin: "*";
+    $("#info").load("make_listing");
   });
   $("#booking").click(function() {
     $.get("PLACEHOLDER", function(data){
