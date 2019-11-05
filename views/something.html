@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BnB</title>
+</head>
+<body>
+  <section>
+    <form id="tabs">
+      <button class="box"id="home" type="button">Home</button>
+      <button class="box"id="list" type="button">list of spaces</button>
+      <button class="box"id="make" type="button">Make a listing</button>
+      <button class="box"id="booking" type="button">Make a booking</button>
+    </form>
+  </section>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <!-- <script>
+  function home() {
+  document.getElementById("demo").innerHTML = "Hello World";
+}
+function list_all() {
+document.getElementById("list123");
+}
+function make() {
+document.getElementById("demo").innerHTML = "Hello World";
+}
+function view() {
+document.getElementById("demo").innerHTML = "Hello World";
+}
+</script> -->
+<script>
+$(document).ready(function(){
+  $("#home").click(function(){
+    $.get("http://localhost:9292/", function(data){
+      console.log(data)
+    })
+    $('#info').text("Welcome to MakersBnB!");
+  });
+  $("#list").click(function() {
+    $.get("../test", function(data){
+    $('#info').text(data);
+    })
+  });
+  $("#make").click(function() {
+    $.get("PLACEHOLDER_MAKING_BOOKING", function(data){
+    $('#info').text(data);
+    })
+  });
+  $("#booking").click(function() {
+    $.get("PLACEHOLDER", function(data){
+    $('#info').text(data);
+    })
+  });
+});
+</script>
+</body>
+</html>
