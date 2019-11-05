@@ -13,7 +13,7 @@ describe '.all' do
 
     expect(places.length).to eq 2
     expect(places.first).to be_a AirBnB
-    expect(places.first.spaceid).to eq place.first.spaceid
+    expect(places.first.spaceid).to eq places.first.spaceid
     expect(places.first.spacename).to eq '2 Bedroom house'
     expect(places.first.price_per_night).to eq "200"
     expect(places.first.location).to eq 'Solihull'

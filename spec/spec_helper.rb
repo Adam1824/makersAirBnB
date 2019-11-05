@@ -18,8 +18,11 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # Want a nice code coverage website? Uncomment this next line!
   SimpleCov::Formatter::HTMLFormatter
 ])
-SimpleCov.start
+# SimpleCov.start
 
+SimpleCov.start do
+   add_filter "lib/test_check.rb"
+end
 
 ENV['ENVIRONMENT'] = 'test'
 
