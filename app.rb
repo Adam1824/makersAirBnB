@@ -7,5 +7,4 @@ class AirBnB < Sinatra::Base
     headers("Access-Control-Allow-Origin" => "*")
     erb :index
   end
-
 end
