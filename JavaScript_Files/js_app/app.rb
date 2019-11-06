@@ -8,6 +8,7 @@ class AirBnB_js < Sinatra::Base
   register Sinatra::Flash
   enable :sessions
   get '/' do
+    @users = session[:username]
     headers("Access-Control-Allow-Origin" => "*")
     erb :"index.html"
   end
@@ -48,7 +49,7 @@ class AirBnB_js < Sinatra::Base
     full_name = params[:full_name]
     username = params[:username]
     password = params[:password]
-    # AirBnB.sign_up()
+    Hosts.sign_up(name: full_name, username: username, password: password)
     redirect "/"
   end
 
@@ -61,8 +62,9 @@ class AirBnB_js < Sinatra::Base
     username = params[:username]
     password = params[:password]
     # user = User.create(email: params['email'], password: params['password'])
-    # session[:user_id] = user.id
-    # AirBnB.sign_in()
+    username = Hosts.sign_in(username: username, password: password)
+    p username
+    session[:username] = username
     redirect "/"
   end
 

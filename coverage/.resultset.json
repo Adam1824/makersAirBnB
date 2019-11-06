@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Student/Desktop/projects/makersAirBnB/spec/AirBnB_spec.rb": [
+      "/Users/Student/Projects/makersAirBnB/spec/AirBnB_spec.rb": [
         1,
         null,
         1,
@@ -24,7 +24,7 @@
         null,
         null
       ],
-      "/Users/Student/Desktop/projects/makersAirBnB/lib/AirBnB.rb": [
+      "/Users/Student/Projects/makersAirBnB/lib/AirBnB.rb": [
         1,
         1,
         null,
@@ -71,6 +71,6 @@
         null
       ]
     },
-    "timestamp": 1572970217
+    "timestamp": 1573032407
   }
 }

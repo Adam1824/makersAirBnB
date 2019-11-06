@@ -4,6 +4,6 @@ def setup_test_database
   p 'Setting up test database'
 
   connection = PG.connect(dbname: 'bnb_test')
-  connection.exec("TRUNCATE accommodation;")
-  connection.exec("TRUNCATE hosts;")
+  connection.exec("TRUNCATE accommodation, hosts;")
+  
 end

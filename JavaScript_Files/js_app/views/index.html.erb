@@ -2,19 +2,28 @@
 <html>
 <head>
   <title>BnB</title>
+  <link rel="stylesheet" type="text/css" href="css/stylesheet.css"></link>
 </head>
 <body>
   <section>
-    <form id="tabs">
-      <button class="box"id="home" type="button">Home</button>
-      <button class="box"id="list" type="button">list of spaces</button>
-      <button class="box"id="make" type="button">Make a listing</button>
-      <button class="box"id="signing_in" type="button">Sign in</button>
-      <button class="box"id="signing_up" type="button">Sign up</button>
-    </form>
+    <header>
+    <div class="container">
+      <h1 class="logo"></h1>
+      <nav>
+        <ul>
+          <form id="tabs">
+            <li><a href="#home" data-id="1" id="home">Home</a></li>
+            <li><a href="#list" data-id="2" id="list">list of spaces</a></li>
+            <li><a href="#make" data-id="3" id="make">Make a listing</a></li>
+            <li><a href="#signing_in"id="signing_in" >Sign in</a></li>
+            <li><a href="#signing_up"id="signing_up" >Sign up</a></li>
+          </form>
+        </ul>
+      </nav>
+    </div>
+    </header>
   </section>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <link rel="stylesheet" href="css/stylesheet.css"></link>
 <script>
 $(document).ready(function(){
   $("#home").click(function(){
@@ -40,7 +49,7 @@ $(document).ready(function(){
   <%= flash[:notice] %>
 </h2>
 <% if @user %>
-  <h1>Welcome, <%= @user.username %></h1>
+  <h1>Welcome, <%= @user %></h1>
   <form action="/sign_out" method="post">
     <input type="submit" value="Sign out" />
   </form>

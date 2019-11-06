@@ -63,7 +63,7 @@ class Hosts
   def self.sign_in(username:, password:)
     test_checker()
 
-    result = @connection.exec("SELECT username FROM hosts WHERE username = '#{username}', password = '#{password}';")
+    result = @connection.exec("SELECT username FROM hosts WHERE username = '#{username}' AND password = '#{password}';")
 
     return result
   end
