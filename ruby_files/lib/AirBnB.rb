@@ -62,9 +62,34 @@ class Hosts
 
   def self.sign_in(username:, password:)
     test_checker()
+    result = @connection.query("SELECT username FROM hosts WHERE username = '#{username}' AND password = '#{password}';")
+    output = ""
+    result.each do |res|
+      output += "#{res['username']}"
+    end
+    return output
+  end
 
-    result = @connection.exec("SELECT username FROM hosts WHERE username = '#{username}' AND password = '#{password}';")
+  def self.user_exists(username)
+    test_checker()
+    users = @connection.query("SELECT username FROM hosts")
+    users.each do |user|
+      if user['username'] == username
+        return true
+      end
+    end
+    return false
+  end
 
-    return result
+  def self.check_sign_in(username:, password:)
+    test_checker()
+    signed_in = false
+    users = @connection.query("SELECT username, password FROM hosts WHERE username = '#{username}' AND password = '#{password}';")
+    users.each do |user|
+      if username == user["username"] && password == user["password"]
+        signed_in = true
+      end
+    end
+    return signed_in
   end
 end

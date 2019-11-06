@@ -7,8 +7,12 @@ class AirBnB_js < Sinatra::Base
   set :public_folder, proc { File.join(root)}
   register Sinatra::Flash
   enable :sessions
+  $user_exists = false
+  $signed_in = false
   get '/' do
-    @users = session[:username]
+    @user_exists = $user_exists
+    @signed_in = $signed_in
+    @user = session[:username]
     headers("Access-Control-Allow-Origin" => "*")
     erb :"index.html"
   end
@@ -61,15 +65,22 @@ class AirBnB_js < Sinatra::Base
   post '/sign_in' do
     username = params[:username]
     password = params[:password]
-    # user = User.create(email: params['email'], password: params['password'])
-    username = Hosts.sign_in(username: username, password: password)
-    p username
-    session[:username] = username
+    if $signed_in == false
+      if Hosts.user_exists(username)
+        $user_exists = true
+        if Hosts.check_sign_in(username: username, password: password)
+          username = Hosts.sign_in(username: username, password: password)
+          $signed_in = true
+          session[:username] = username
+        end
+      end
+    end
     redirect "/"
   end
 
   post '/sign_out' do
-
+    session[:username] = false
+    redirect '/'
   end
 
   run! if app_file == $0
