@@ -19,7 +19,7 @@ To get program running:
   set up database:
   -run rake once.
   run rackup
-  open app by running ruby JavaScript_Files/views/app.rb
+  open app by running ruby JavaScript_Files/js_app/app.rb
 ```
 ```
 stories completed:

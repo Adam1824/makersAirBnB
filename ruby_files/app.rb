@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'json'
-require './lib/AirBnB'
+require './ruby_files/lib/AirBnB'
 
 class AirBnB_manager < Sinatra::Base
   set :public_folder, proc { File.join(root)}
