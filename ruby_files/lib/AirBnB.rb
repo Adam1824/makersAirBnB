@@ -42,3 +42,21 @@ class AirBnB
 
   end
 end
+
+class Hosts
+  attr_reader :host_id, :name, :username, :password
+  def initialize(host_id:, name:, username:, password:)
+    @host_id = host_id
+    @name = name
+    @username = username
+    @password = password
+  end
+
+  def self.sign_up(name:, username:, password:)
+
+    test_checker()
+
+    result = @connection.exec("INSERT INTO hosts (name, username, password) VALUES('#{name}', '#{username}', '#{password}') RETURNING name, username, password")
+    Hosts.new(host_id: result[0]['host_id'], name: result[0]['name'], username: result[0]['username'], password: result[0]['password'])
+  end
+end

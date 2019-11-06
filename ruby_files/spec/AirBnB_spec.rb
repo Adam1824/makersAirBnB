@@ -1,4 +1,5 @@
 require 'AirBnB'
+require 'persisted_data'
 
 describe '.all' do
   it 'returns all places' do
@@ -17,5 +18,17 @@ describe '.all' do
     expect(places.first.spacename).to eq '2 Bedroom house'
     expect(places.first.price_per_night).to eq "200"
     expect(places.first.location).to eq 'Solihull'
+  end
+end
+
+describe '.sign_up' do
+  it 'can sign someone up' do
+    connection = PG.connect(dbname: 'bnb_test')
+
+    users = Hosts.sign_up(name: "Luke", username: "LukeGittins01", password: "password")
+
+
+    persisted_data = persisted_data(host_id: users.host_id)
+    expect(users.name).to eq 'Luke'
   end
 end
