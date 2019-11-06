@@ -7,11 +7,7 @@ class AirBnB_js < Sinatra::Base
   set :public_folder, proc { File.join(root)}
   register Sinatra::Flash
   enable :sessions
-  $user_exists = false
-  $signed_in = false
   get '/' do
-    @user_exists = $user_exists
-    @signed_in = $signed_in
     @user = session[:username]
     headers("Access-Control-Allow-Origin" => "*")
     erb :"index.html"
@@ -50,11 +46,25 @@ class AirBnB_js < Sinatra::Base
   end
 
   post '/sign_up' do
+    @exists = false
     full_name = params[:full_name]
     username = params[:username]
     password = params[:password]
-    Hosts.sign_up(name: full_name, username: username, password: password)
-    redirect "/"
+    host = Hosts.new(host_id: 1, name: full_name, username: username, password: password)
+    if host.exists?
+      @exists = true
+      headers("Access-Control-Allow-Origin" => "*")
+      erb :"index.html"
+    else
+      Hosts.sign_up(name: full_name, username: username, password: password)
+      p session[:username]
+      session[:username] = username
+      p session[:username]
+      @user = session[:username]
+      p @user
+      headers("Access-Control-Allow-Origin" => "*")
+      erb :"index.html"
+    end
   end
 
   get '/sign_in' do
@@ -63,19 +73,21 @@ class AirBnB_js < Sinatra::Base
   end
 
   post '/sign_in' do
+    @signed_in_erb = false
     username = params[:username]
     password = params[:password]
-    if $signed_in == false
-      if Hosts.user_exists(username)
-        $user_exists = true
-        if Hosts.check_sign_in(username: username, password: password)
-          username = Hosts.sign_in(username: username, password: password)
-          $signed_in = true
-          session[:username] = username
-        end
-      end
+    signed_in = Hosts.sign_in_check(username: username, password: password)
+    if signed_in
+      @signed_in_erb = true
+      session[:username] = username
+      @user = session[:username]
+      headers("Access-Control-Allow-Origin" => "*")
+      erb :"index.html"
+    else
+      @user = false
+      headers("Access-Control-Allow-Origin" => "*")
+      erb :"index.html"
     end
-    redirect "/"
   end
 
   post '/sign_out' do

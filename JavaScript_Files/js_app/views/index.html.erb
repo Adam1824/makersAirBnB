@@ -54,8 +54,8 @@ $(document).ready(function(){
     <input type="submit" value="Sign out" />
   </form>
 <% end %>
-<% if @user_exists == true && @signed_in == false %>
-  <h3 class="p">User already exits or Sign in details are wrong" </h3>
+<% if @exists == true || @signed_in_erb == false %>
+  <h3 class="p">User already exits or Sign in details are wrong</h3>
 <% end %>
 <p class="p" id="info"> </p>
 </body>

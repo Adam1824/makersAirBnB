@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BnB</title>
+</head>
+<body>
+  <section>
+    <form id="tabs">
+      <button class="box"id="home" type="button">Home</button>
+      <button class="box"id="list" type="button">list of spaces</button>
+      <button class="box"id="make" type="button">Make a listing</button>
+    </form>
+  </section>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <link rel="stylesheet" href="css/stylesheet.css"></link>
+  <!-- <script>
+  function home() {
+  document.getElementById("demo").innerHTML = "Hello World";
+}
+function list_all() {
+document.getElementById("list123");
+}
+function make() {
+document.getElementById("demo").innerHTML = "Hello World";
+}
+function view() {
+document.getElementById("demo").innerHTML = "Hello World";
+}
+</script> -->
+<script>
+$(document).ready(function(){
+  $("#home").click(function(){
+    $('#info').text("Welcome to MakersBnB!");
+  });
+  $("#list").click(function() {
+    $.get("http://localhost:9292/", function(data){
+    $("#info").load("http://localhost:9292/");
+    })
+  });
+  $("#make").click(function() {
+    // Access-Control-Allow-Origin: "*";
+    $("#info").load("make_listing");
+  });
+});
+</script>
+<p class="p" id="info"> </p>
+<!-- <script id="list123" src="list.html"></script> -->
+</body>
+</html>

@@ -1,0 +1,29 @@
+<ul>
+  <% @accommodation.each do |place| %>
+  <li id="spacename"<%= place.spaceid%>">
+    <%= place.spacename %>
+  </li>
+  <li id="description"<%= place.spaceid%>">
+    <%= place.description %>
+  </li>
+  <li id="price_per_night"<%= place.spaceid%>">
+    <%= place.price_per_night %>
+  </li>
+  <li id="dates_available"<%= place.spaceid%>">
+    <%= place.dates_available %>
+  </li>
+  <li id="availability"<%= place.spaceid%>">
+    <%= place.availability %>
+  </li>
+  <li id="location"<%= place.spaceid%>">
+    <%= place.location %>
+  </li>
+  <br>
+    <%if place.availability == "true"%>
+      <form action="/" method="post">
+        <input type ='hidden' name='spaceid' value=<%=place.spaceid%>>
+        <input type="submit" value="Book" >
+      </form>
+    <% end %>
+  <% end %>
+</ul>
