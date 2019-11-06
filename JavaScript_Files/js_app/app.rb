@@ -1,9 +1,12 @@
 require 'sinatra'
 require 'json'
+require 'sinatra/flash'
 require_relative '../../ruby_files/lib/AirBnB'
 
 class AirBnB_js < Sinatra::Base
   set :public_folder, proc { File.join(root)}
+  register Sinatra::Flash
+  enable :sessions
   get '/' do
     headers("Access-Control-Allow-Origin" => "*")
     erb :"index.html"
@@ -34,6 +37,37 @@ class AirBnB_js < Sinatra::Base
     headers("Access-Control-Allow-Origin" => "*")
     AirBnB.update(params[:spaceid].to_i)
     redirect '/'
+  end
+
+  get '/sign_up' do
+    headers("Access-Control-Allow-Origin" => "*")
+    erb :"sign_up.html"
+  end
+
+  post '/sign_up' do
+    full_name = params[:full_name]
+    username = params[:username]
+    password = params[:password]
+    # AirBnB.sign_up()
+    redirect "/"
+  end
+
+  get '/sign_in' do
+    headers("Access-Control-Allow-Origin" => "*")
+    erb :"sign_in.html"
+  end
+
+  post '/sign_in' do
+    username = params[:username]
+    password = params[:password]
+    # user = User.create(email: params['email'], password: params['password'])
+    # session[:user_id] = user.id
+    # AirBnB.sign_in()
+    redirect "/"
+  end
+
+  post '/sign_out' do
+
   end
 
   run! if app_file == $0
