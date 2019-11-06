@@ -59,4 +59,12 @@ class Hosts
     result = @connection.exec("INSERT INTO hosts (name, username, password) VALUES('#{name}', '#{username}', '#{password}') RETURNING name, username, password")
     Hosts.new(host_id: result[0]['host_id'], name: result[0]['name'], username: result[0]['username'], password: result[0]['password'])
   end
+
+  def self.sign_in(username:, password:)
+    test_checker()
+
+    result = @connection.exec("SELECT username FROM hosts WHERE username = '#{username}', password = '#{password}';")
+
+    return result
+  end
 end
