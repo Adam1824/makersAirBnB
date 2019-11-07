@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Student/projects/makersAirBnB/ruby_files/lib/AirBnB.rb": [
+      "/Users/Student/projects/mini-projects/makersAirBnB/ruby_files/lib/AirBnB.rb": [
         1,
         1,
         null,
@@ -99,7 +99,7 @@
         null,
         null
       ],
-      "/Users/Student/projects/makersAirBnB/ruby_files/spec/AirBnB_spec.rb": [
+      "/Users/Student/projects/mini-projects/makersAirBnB/ruby_files/spec/AirBnB_spec.rb": [
         1,
         1,
         null,
@@ -184,7 +184,7 @@
         null,
         null
       ],
-      "/Users/Student/projects/makersAirBnB/ruby_files/spec/persisted_data.rb": [
+      "/Users/Student/projects/mini-projects/makersAirBnB/ruby_files/spec/persisted_data.rb": [
         1,
         null,
         1,
@@ -199,7 +199,7 @@
         1,
         null
       ],
-      "/Users/Student/projects/makersAirBnB/ruby_files/spec/features/list_spaces_spec.rb": [
+      "/Users/Student/projects/mini-projects/makersAirBnB/ruby_files/spec/features/list_spaces_spec.rb": [
         1,
         1,
         1,
@@ -247,6 +247,6 @@
         null
       ]
     },
-    "timestamp": 1573121245
+    "timestamp": 1573121551
   }
 }
