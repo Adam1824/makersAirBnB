@@ -44,3 +44,40 @@ describe '.create' do
     expect(places.price_per_night).to eq '50'
   end
 end
+
+describe '.exists?' do
+  context 'someone who has signed up before'
+    it 'should return true as they have signed up' do
+    connection = PG.connect(dbname: 'bnb_test')
+    user = Hosts.sign_up(name: "Luke", username: "LukeGittins01", password: "password")
+
+    expect(user.exists?).to eq(true)
+  end
+
+  context 'someone who hasnt signed up before'
+  it 'should return false as they havent signed up' do
+    connection = PG.connect(dbname: 'bnb_test')
+    user = Hosts.new(host_id: 20, name: 'Adam', username: 'adam_f', password: '123')
+
+    expect(user.exists?).to eq(false)
+  end
+end
+
+describe '.sign_in' do
+  context 'someone can sign in'
+  it 'should sign in' do
+    connection = PG.connect(dbname: 'bnb_test')
+    user = Hosts.sign_up(name: "Luke", username: "LukeGittins01", password: "password")
+
+    expect(Hosts.sign_in(username: user.username, password: user.password)).to eq("LukeGittins01")
+  end
+end
+
+describe '.sign_in_check' do
+  it 'should check if the user is signed in' do
+    connection = PG.connect(dbname: 'bnb_test')
+    user = Hosts.sign_up(name: "Luke", username: "LukeGittins01", password: "password")
+
+    expect(Hosts.sign_in_check(username: user.username, password: user.password)).to eq(true)
+  end
+end
