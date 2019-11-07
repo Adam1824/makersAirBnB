@@ -1,7 +1,11 @@
 {
   "RSpec": {
     "coverage": {
+<<<<<<< HEAD
       "/Users/Student/projects/mini-projects/makersAirBnB/ruby_files/lib/AirBnB.rb": [
+=======
+      "/Users/Student/Desktop/projects/makersAirBnB/ruby_files/spec/AirBnB_spec.rb": [
+>>>>>>> 67cc959ab7365f947c69be6790f3f4a85244bd4c
         1,
         1,
         null,
@@ -96,16 +100,43 @@
         null,
         0,
         null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/Student/projects/mini-projects/makersAirBnB/ruby_files/spec/AirBnB_spec.rb": [
+=======
+      "/Users/Student/Desktop/projects/makersAirBnB/ruby_files/lib/AirBnB.rb": [
+>>>>>>> 67cc959ab7365f947c69be6790f3f4a85244bd4c
         1,
         1,
         null,
         1,
         1,
         1,
+<<<<<<< HEAD
+=======
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+>>>>>>> 67cc959ab7365f947c69be6790f3f4a85244bd4c
         null,
         null,
         1,
@@ -121,6 +152,13 @@
         1,
         1,
         null,
+<<<<<<< HEAD
+=======
+        3,
+        null,
+        3,
+        3,
+>>>>>>> 67cc959ab7365f947c69be6790f3f4a85244bd4c
         null,
         null,
         1,
@@ -158,33 +196,72 @@
         1,
         null,
         1,
+<<<<<<< HEAD
         1,
         1,
         1,
+=======
+        0,
+        0,
+        0,
+        0,
+        0,
+>>>>>>> 67cc959ab7365f947c69be6790f3f4a85244bd4c
         null,
         null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
+<<<<<<< HEAD
         null,
         1,
         1,
         1,
         1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+=======
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/Student/Desktop/projects/makersAirBnB/ruby_files/spec/persisted_data.rb": [
+>>>>>>> 67cc959ab7365f947c69be6790f3f4a85244bd4c
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+<<<<<<< HEAD
         1,
         null,
         null,
@@ -193,5 +270,17 @@
       ]
     },
     "timestamp": 1573120079
+=======
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1573119084
+>>>>>>> 67cc959ab7365f947c69be6790f3f4a85244bd4c
   }
 }

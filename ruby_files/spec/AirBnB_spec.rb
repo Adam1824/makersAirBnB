@@ -32,3 +32,15 @@ describe '.sign_up' do
     expect(users.name).to eq 'Luke'
   end
 end
+
+describe '.create' do
+  it 'can create a new space' do
+    connection = PG.connect(dbname: 'bnb_test')
+
+    places = AirBnB.create(spacename: "1 room flat", description: "room with sink and bed", price_per_night: 50, dates_available: "january", availability: "True", location: "leatherhead")
+    persisted_data = persisted_dats_create(spaceid: places.spaceid)
+    expect(places.spacename).to eq '1 room flat'
+    expect(places.description).to eq 'room with sink and bed'
+    expect(places.price_per_night).to eq '50'
+  end
+end
